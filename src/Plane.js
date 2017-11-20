@@ -1,7 +1,7 @@
 function Plane() {
-  // this.isAirborne = true
+  this.isAirborne = true
 }
 
-Plane.prototype.isAirborne = function() {
-  return true
+Plane.prototype.land = function() {
+  this.isAirborne = false
 };
