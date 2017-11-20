@@ -7,7 +7,7 @@ describe("Landing", function() {
     var boeing = new Plane();
     var stansted = new Airport();
     boeing.land(stansted);
-    expect(boeing.isAirborne).toEqual(false)
+    expect(boeing.isAirborne).toBe(false)
   });
   it("Should be added to an airport hangar", function() {
     var boeing = new Plane();
@@ -18,11 +18,12 @@ describe("Landing", function() {
 });
 
 describe("Taking off", function() {
-  it("should be airborne after taking off", function() {
+  it("Should be airborne after taking off", function() {
     var boeing = new Plane();
     var stansted = new Airport();
     boeing.land(stansted);
     boeing.takeOff(stansted);
     expect(boeing.isAirborne).toEqual(true)
   });
+  // it("Plane should ")
 });

@@ -8,5 +8,6 @@ Plane.prototype.land = function(airport) {
 };
 
 Plane.prototype.takeOff = function(airport) {
+  airport.release(this)
   this.isAirborne = true
 };

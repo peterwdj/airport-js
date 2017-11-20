@@ -12,5 +12,11 @@ describe("Receiving plane", function() {
 });
 
 describe("Releasing a plane", function() {
-
+  it("Hangar should be empty after releasing a plane", function() {
+    var boeing = new Plane();
+    var stansted = new Airport();
+    boeing.land(stansted);
+    stansted.release(boeing);
+    expect(stansted.hangar).toEqual([])
+  });
 });
