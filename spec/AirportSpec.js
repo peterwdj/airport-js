@@ -10,3 +10,7 @@ describe("Receiving plane", function() {
     expect(stansted.hangar).toEqual([boeing])
   });
 });
+
+describe("Releasing a plane", function() {
+
+});

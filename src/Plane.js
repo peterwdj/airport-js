@@ -6,3 +6,7 @@ Plane.prototype.land = function(airport) {
   this.isAirborne = false
   airport.receivePlane(this)
 };
+
+Plane.prototype.takeOff = function(airport) {
+  this.isAirborne = true
+};

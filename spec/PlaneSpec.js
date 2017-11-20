@@ -17,4 +17,12 @@ describe("Landing", function() {
   });
 });
 
-describe("Taking off", function)
+describe("Taking off", function() {
+  it("should be airborne after taking off", function() {
+    var boeing = new Plane();
+    var stansted = new Airport();
+    boeing.land(stansted);
+    boeing.takeOff(stansted);
+    expect(boeing.isAirborne).toEqual(true)
+  });
+});
