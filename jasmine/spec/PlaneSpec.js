@@ -4,6 +4,7 @@ describe("Landing", function(){
   beforeEach(function(){
     plane = new Plane();
     airport = jasmine.createSpyObj('gatwick', ['receivePlane', 'releasePlane']);
+    weather = jasmine.createSpy('weather');
   });
 
   it("should be airborne before landing", function(){
@@ -11,8 +12,14 @@ describe("Landing", function(){
   });
 
   it("should not be flying after landing", function(){
+    plane.weather.isStormy = jasmine.createSpy("not stormy").and.returnValue(false);
     plane.land(airport);
     expect(plane.isFlying).toEqual(false)
+  });
+
+  it("should not land if weather is stormy", function() {
+    plane.weather.isStormy = jasmine.createSpy("stormy weather").and.returnValue(true);
+    expect(function() { plane.land(airport) }).toThrow("Stormy")
   });
 });
 
@@ -24,6 +31,7 @@ describe("Takeoff", function(){
   });
 
   it("should be flying after takeoff", function(){
+    plane.weather.isStormy = jasmine.createSpy("stormy weather").and.returnValue(false);
     plane.land(airport);
     plane.takeOff(airport);
     expect(plane.isFlying).toEqual(true)
