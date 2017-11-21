@@ -1,5 +1,8 @@
-function Airport(){
+var CAPACITY = 50
+
+function Airport(capacity){
   this.hangar = []
+  this.capacity = capacity || CAPACITY
 };
 
 Airport.prototype.receivePlane = function(plane){

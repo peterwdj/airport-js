@@ -14,6 +14,7 @@ describe("Landing", function(){
     expect(airport.hangar).toEqual([plane])
   });
 });
+
 describe("Takeoff", function(){
 
   beforeEach(function(){
@@ -24,5 +25,16 @@ describe("Takeoff", function(){
   it("hangar is empty after releasing plane", function(){
     airport.releasePlane(plane);
     expect(airport.hangar).toEqual([])
+  });
+});
+
+describe("CAPACITY", function(){
+
+  it("should have a default capacity of 50 planes", function(){
+    expect(airport.capacity).toEqual(50);
+  });
+  it("should have a capacity of 60 planes", function(){
+    var stansted = new Airport(60);
+    expect(stansted.capacity).toEqual(60);
   });
 });
