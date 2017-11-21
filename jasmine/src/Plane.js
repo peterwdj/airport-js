@@ -13,6 +13,9 @@ Plane.prototype.land = function(airport){
 };
 
 Plane.prototype.takeOff = function(airport){
+  if (this.weather.isStormy() === true) {
+    throw("Stormy");
+  }
   this.isFlying = true
   airport.releasePlane(this)
 };
