@@ -24,7 +24,6 @@ describe("Takeoff", function(){
   });
 
   it("should be flying after takeoff", function(){
-    console.log(airport);
     plane.land(airport);
     plane.takeOff(airport);
     expect(plane.isFlying).toEqual(true)
