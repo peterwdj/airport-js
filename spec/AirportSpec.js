@@ -15,7 +15,10 @@ describe("Landing", function() {
   });
 
   it("should not accept any planes if the hangar is full", function() {
-
+    for (var i = 0; i < 50; i++) {
+      airport.hangar.push(new Plane());
+    }
+    expect(function() { airport.receivePlane(new Plane()) }).toThrow("Full")
   })
 
 });

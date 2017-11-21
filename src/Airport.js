@@ -6,6 +6,9 @@ function Airport(capacity){
 };
 
 Airport.prototype.receivePlane = function(plane){
+  if (this.hangar.length >= this.capacity) {
+    throw("Full");
+  }
   this.hangar.push(plane);
 };
 

@@ -9,7 +9,6 @@ Plane.prototype.land = function(airport){
   }
   this.isFlying = false
   airport.receivePlane(this)
-  return true
 };
 
 Plane.prototype.takeOff = function(airport){
