@@ -10,7 +10,6 @@ describe("Takeoff", function(){
   });
 
   it("after landing plane should be in hangar", function(){
-    console.log(plane);
     airport.receivePlane(plane);
     expect(airport.hangar).toEqual([plane])
   });
