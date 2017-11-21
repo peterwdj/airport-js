@@ -3,7 +3,7 @@ describe("Landing", function(){
 
   beforeEach(function(){
     plane = new Plane();
-    airport = jasmine.createSpyObj('gatwick', ['receivePlane']);
+    airport = jasmine.createSpyObj('gatwick', ['receivePlane', 'releasePlane']);
   });
 
   it("should be airborne before landing", function(){

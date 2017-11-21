@@ -10,4 +10,5 @@ Plane.prototype.land = function(airport){
 
 Plane.prototype.takeOff = function(airport){
   this.isFlying = true
+  airport.releasePlane(this)
 };
