@@ -36,7 +36,7 @@ describe("Takeoff", function() {
     expect(plane.isFlying).toEqual(true)
   });
 
-  it ("should not land if weather is stormy", function() {
+  it ("should not take off if weather is stormy", function() {
     plane.weather.isStormy = jasmine.createSpy("sunny weather").and.returnValue(false);
     plane.land(airport);
     plane.weather.isStormy = jasmine.createSpy("stormy weather").and.returnValue(true);
